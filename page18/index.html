@@ -31,8 +31,7 @@
             e.preventDefault();
             const w = window.open('', 'dialog', opts);
             const d = w.document;
-            d.write(
-`<!DOCTYPE html>
+            const html = `<!DOCTYPE html>
 <html>
 <head>
     <script type="text/javascript">
@@ -44,12 +43,11 @@
                 window.location = 'https://vk.com/share.php?url=https%3A%2F%2Fdm33tri.github.io%2Fpage11%2F';
             }
         }, 200)
-    </script>
+    <\/script>
 </head>
 <body></body>
-</html>`
-            )
-
+</html>`;
+            d.write();
         }
     </script>
 </body>
