@@ -27,8 +27,29 @@
     <hr />
     <div id="tgme_frame_cont"></div>
     <script type="text/javascript">
-        document.getElementById('vk').onclick = () => {
-            window.location = 'vk://vk.com/share.php?url=https%3A%2F%2Fdm33tri.github.io%2Fpage11%2F';
+        document.getElementById('vk').onclick = (e) => {
+            e.preventDefault();
+            const w = window.open('', 'dialog', opts);
+            const d = w.document;
+            d.write(
+`<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript">
+        var gone = false;
+        window.onblur = () => { gone = true; }
+        window.location = 'vk://vk.com/share.php?url=https%3A%2F%2Fdm33tri.github.io%2Fpage11%2F';
+        setTimeout(() => {
+            if (!gone) {
+                window.location = 'https://vk.com/share.php?url=https%3A%2F%2Fdm33tri.github.io%2Fpage11%2F';
+            }
+        }, 200)
+    </script>
+</head>
+<body></body>
+</html>`
+            )
+
         }
     </script>
 </body>
