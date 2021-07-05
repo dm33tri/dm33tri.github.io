@@ -29,14 +29,15 @@
     <script type="text/javascript">
         document.getElementById('vk').onclick = (e) => {
             e.preventDefault();
-            let gone = false;
-            window.onblur = () => { gone = true; }
-            window.location = 'vk://vk.com/share.php?url=https%3A%2F%2Fdm33tri.github.io%2Fpage11%2F';
-            setTimeout(() => {
-                if (!gone) {
-                    window.open('https://vk.com/share.php?url=https%3A%2F%2Fdm33tri.github.io%2Fpage11%2F');
-                }
-            }, 100);
+            var w = window.open('', 'dialog');
+            w.document.body.innerHTML = `<script>
+    window.location = 'vk://vk.com/share.php?url=https%3A%2F%2Fdm33tri.github.io%2Fpage11%2F';
+    setTimeout(() => {
+        window.location = 'https://vk.com/share.php?url=https%3A%2F%2Fdm33tri.github.io%2Fpage11%2F';
+    }, 2000);
+<\/script>`;
+            
+            
         }
     </script>
 </body>
