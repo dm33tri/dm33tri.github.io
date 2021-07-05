@@ -26,13 +26,15 @@
     </a>
     <hr />
     <script type="text/javascript">
-        const iframe = document.createElement('iframe');
-        document.appendChild(iframe);
-        document.getElementById('vk').addEventListener('click', (e) => {
-            e.preventDefault();
-            
-            iframe.src = 'vk://vk.com/share.php?url=https%3A%2F%2Fdm33tri.github.io%2Fpage11%2F';
-        });
+        window.onload = () => {
+            const iframe = document.createElement('iframe');
+            document.appendChild(iframe);
+            document.getElementById('vk').addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                iframe.src = 'vk://vk.com/share.php?url=https%3A%2F%2Fdm33tri.github.io%2Fpage11%2F';
+            });
+        }
     </script>
 </body>
 </html>
