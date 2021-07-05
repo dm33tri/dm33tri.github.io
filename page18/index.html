@@ -10,27 +10,30 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Яндекс.Погода">
     <meta property="og:description" content="Москва: погода на карте в реальном времени по данным с метеорадаров на Яндекс.Погоде. Анимированная карта осадков и молний онлайн. Прогноз осадков в конкретном месте на каждые десять минут. Температура воздуха, давление и влажность, скорость ветра, магнитное поле и УФ-индекс. ☼ Время восхода и заката солнца. Мобильное приложение Яндекс.Погода.">
-    <meta property="og:title" content="Погода в Москве 4 июля 21:00 — карта осадков ☂ и гроз онлайн — Яндекс.Погода">
+    <meta property="og:title" content="Погода в Москве 4 июля 20:00 — карта осадков ☂ и гроз онлайн — Яндекс.Погода">
+    <meta property="og:image" content="https://dm33tri.github.io/page9/weather_logo_1200_630.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:image" content="https://dm33tri.github.io/page9/weather_logo_300_300.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="300">
     <meta property="og:image:height" content="300">
-    <meta property="og:image" content="https://dm33tri.github.io/page9/weather_logo_1200_630.png">
     <title>Погода в Москве — карта осадков ☂ и гроз онлайн — Яндекс.Погода</title>
     <script type="text/javascript" src="https://vk.com/js/api/share.js?93" charset="windows-1251"></script>
 </head>
 <body>
-    https%3A%2F%2Fvk.com%2Fshare.php%3Furl%3Dhttps%253A%252F%252Fdm33tri.github.io%252Fpage11%252F
-    <a href="https://vk.com/share.php?url=https%3A%2F%2Fdm33tri.github.io%2Fpage11%2F">
+    <a id="vk" href="https://vk.com/share.php?url=https%3A%2F%2Fdm33tri.github.io%2Fpage11%2F">
         VK
     </a>
     <hr />
-    <a href="vk://share.php?url=https%3A%2F%2Fdm33tri.github.io%2Fpage11%2F&image=https%3A%2F%2Fdm33tri.github.io%2Fpage11%2Fweather_logo_1400_630.png">
-        VK 2
-    </a>
+    <iframe id="iframe">
+    </iframe>
     <script type="text/javascript">
-
-    document.write(VK.Share.button());
+        document.onload = () => {
+            document.getElementById('vk').onclick = () => {
+                document.getElementById('iframe').src = 'vk://vk.com/share.php?url=https%3A%2F%2Fdm33tri.github.io%2Fpage11%2F';
+            }
+        }
     </script>
 </body>
 </html>
