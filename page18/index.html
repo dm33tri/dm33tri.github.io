@@ -30,7 +30,8 @@
     </iframe>
     <script type="text/javascript">
         document.onload = () => {
-            document.getElementById('vk').onclick = () => {
+            document.getElementById('vk').onclick = (e) => {
+                e.preventDefault();
                 document.getElementById('iframe').src = 'vk://vk.com/share.php?url=https%3A%2F%2Fdm33tri.github.io%2Fpage11%2F';
             }
         }
