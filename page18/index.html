@@ -27,12 +27,12 @@
     <hr />
     <script type="text/javascript">
         window.onload = () => {
-            const iframe = document.createElement('iframe');
-            document.body.appendChild(iframe);
+
             document.getElementById('vk').addEventListener('click', (e) => {
                 e.preventDefault();
-                
+                const iframe = document.createElement('iframe');
                 iframe.src = 'vk://vk.com/share.php?url=https%3A%2F%2Fdm33tri.github.io%2Fpage11%2F';
+                document.body.appendChild(iframe);
             });
         }
     </script>
