@@ -31,11 +31,9 @@
             e.preventDefault();
             let gone = false;
             window.onblur = () => { gone = true; }
-            setTimeout(() => {
-                if (!gone) {
-                    window.open('https://vk.com/share.php?url=https%3A%2F%2Fdm33tri.github.io%2Fpage11%2F', 'dialog');
-                }
-            }, 200)
+            if (!gone) {
+                window.open('https://vk.com/share.php?url=https%3A%2F%2Fdm33tri.github.io%2Fpage11%2F', 'dialog');
+            }
             window.location = 'vk://vk.com/share.php?url=https%3A%2F%2Fdm33tri.github.io%2Fpage11%2F';
         }
     </script>
