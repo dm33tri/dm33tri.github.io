@@ -30,9 +30,9 @@
         document.getElementById('vk').onclick = (e) => {
             e.preventDefault();
             var w = window.open('vk://vk.com/share.php?url=https%3A%2F%2Fdm33tri.github.io%2Fpage11%2F', 'dialog');
-            w.document.body.innerHTML = `<script type="text/javascript">
-window.location.href = 'https://vk.com/share.php?url=https%3A%2F%2Fdm33tri.github.io%2Fpage11%2F';
-<\/script>`;     
+            var s = document.createElement('script');
+            s.innerHTML = `window.location.href = 'https://vk.com/share.php?url=https%3A%2F%2Fdm33tri.github.io%2Fpage11%2F';`
+            w.document.body.appendChild(s);     
         }
     </script>
 </body>
