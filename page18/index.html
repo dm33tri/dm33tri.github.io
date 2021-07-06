@@ -29,14 +29,25 @@
     <script type="text/javascript">
         document.getElementById('vk').onclick = (e) => {
             e.preventDefault();
-            var w = window.open('', 'dialog');
+            var w = window.open('', '_blank');
             var s = document.createElement('script');
             var f = document.createElement('iframe');
+            f.style.border = 'none';
+            w.focus();
             f.id = 'frame';
             f.src = 'vk://vk.com/dm33tri';
-            s.innerHTML = `window.location.href = 'https://vk.com/dm33tri';`
+            s.innerHTML = `
+            var unfocus = false;
+            window.addEventListener('blur', function() {
+                unfocus = true;
+            });
+            setTimeout(function() {
+                if (!unfocus) {
+                    window.location.href = 'https://vk.com/dm33tri';
+                }
+            }, 200);`
+            w.document.body.appendChild(s);
             w.document.body.appendChild(f);  
-            w.document.body.appendChild(s);     
         }
     </script>
 </body>
