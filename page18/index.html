@@ -24,31 +24,41 @@
     <a target="_blank" id="vk" href="tg://dm33tri">
         VK
     </a>
+    <a target="_blank" id="tg" href="tg://dm33tri">
+        TG
+    </a>
     <hr />
     <div id="tgme_frame_cont"></div>
     <script type="text/javascript">
+        const openDeepLink = (link, fallback) => {
+            const newWindow = window.open('', '_blank');
+            const script = document.createElement('script');
+            const iframe = document.createElement('iframe');
+            iframe.src = link;
+            iframe.style.border = 'none';
+            script.innerHTML = `
+                var unfocus = false;
+                window.addEventListener('blur', function() {
+                    unfocus = true;
+                });
+                setTimeout(function() {
+                    if (!unfocus) {
+                        window.location.href = '${fallback}';
+                    }
+                }, 200);
+            `;
+            newWindow?.document.body.appendChild(iframe);
+            newWindow?.document.body.appendChild(script);
+        };
         document.getElementById('vk').onclick = (e) => {
             e.preventDefault();
-            var w = window.open('', '_blank');
-            var s = document.createElement('script');
-            var f = document.createElement('iframe');
-            f.style.border = 'none';
-            w.focus();
-            f.id = 'frame';
-            f.src = 'vk://vk.com/dm33tri';
-            s.innerHTML = `
-            var unfocus = false;
-            window.addEventListener('blur', function() {
-                unfocus = true;
-            });
-            setTimeout(function() {
-                if (!unfocus) {
-                    window.location.href = 'https://vk.com/dm33tri';
-                }
-            }, 200);`
-            w.document.body.appendChild(s);
-            w.document.body.appendChild(f);  
+            openDeepLink('vk://vk.com/dm33tri', 'https://vk.com/dm33tri');  
+        }
+        document.getElementById('tg').onclick = (e) => {
+            e.preventDefault();
+            openDeepLink('tg://dm33tri', 'https://t.me/dm33tri');  
         }
     </script>
+    <iframe ></iframe>
 </body>
 </html>
