@@ -21,7 +21,7 @@
     <title>Погода в Москве — карта осадков ☂ и гроз онлайн — Яндекс.Погода</title>
 </head>
 <body>
-    <a target="_blank" id="vk" href="https://vk.com/share.php?url=https%3A%2F%2Fdm33tri.github.io%2Fpage11%2F">
+    <a target="_blank" id="vk" href="tg://dm33tri">
         VK
     </a>
     <hr />
@@ -29,9 +29,20 @@
     <script type="text/javascript">
         document.getElementById('vk').onclick = (e) => {
             e.preventDefault();
-            var w = window.open('vk://vk.com/share.php?url=https%3A%2F%2Fdm33tri.github.io%2Fpage11%2F', 'dialog');
+            var w = window.open('', '_blank');
             var s = document.createElement('script');
-            s.innerHTML = `window.location.href = 'https://vk.com/share.php?url=https%3A%2F%2Fdm33tri.github.io%2Fpage11%2F';`
+            s.innerHTML = `
+var unfocus = false;
+window.addEventListener('blur', function() {
+    unfocus = true;
+});
+window.location.href = 'vk://dm33tri';
+setTimeout(function() {
+    if (!unfocus) {
+        window.location.href = 'https://t.me/dm33tri';
+    }
+}, 200);
+`
             w.document.body.appendChild(s);     
         }
     </script>
